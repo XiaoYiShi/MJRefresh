@@ -14,12 +14,13 @@
 #import "MJRefresh.h"
 
 // 自定义的header
-#import "MJChiBaoZiHeader.h"
+//#import "MJChiBaoZiHeader.h"
 #import "MJChiBaoZiFooter.h"
 #import "MJChiBaoZiFooter2.h"
 #import "MJDIYHeader.h"
 #import "MJDIYAutoFooter.h"
 #import "MJDIYBackFooter.h"
+#import "MJRefreshExample-Swift.h"
 
 static const CGFloat MJDuration = 2.0;
 /**
@@ -52,7 +53,8 @@ static const CGFloat MJDuration = 2.0;
 - (void)example02
 {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
-    self.tableView.mj_header = [MJChiBaoZiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    
+//    self.tableView.mj_header = [MJChiBaoZiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     
     // 马上进入刷新状态
     [self.tableView.mj_header beginRefreshing];
@@ -80,20 +82,21 @@ static const CGFloat MJDuration = 2.0;
 #pragma mark UITableView + 下拉刷新 隐藏状态和时间
 - (void)example04
 {
+    
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
-    MJChiBaoZiHeader *header = [MJChiBaoZiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+//    MJChiBaoZiHeader *header = [MJChiBaoZiHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     
     // 隐藏时间
-    header.lastUpdatedTimeLabel.hidden = YES;
+//    header.lastUpdatedTimeLabel.hidden = YES;
 
     // 隐藏状态
-    header.stateLabel.hidden = YES;
-    
-    // 马上进入刷新状态
-    [header beginRefreshing];
-    
-    // 设置header
-    self.tableView.mj_header = header;
+//    header.stateLabel.hidden = YES;
+//    
+//    // 马上进入刷新状态
+//    [header beginRefreshing];
+//    
+//    // 设置header
+//    self.tableView.mj_header = header;
 }
 
 #pragma mark UITableView + 下拉刷新 自定义文字

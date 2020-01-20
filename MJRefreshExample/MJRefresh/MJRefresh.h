@@ -6,7 +6,7 @@
 #import "UIView+MJExtension.h"
 
 #import "MJRefreshNormalHeader.h"
-#import "MJRefreshGifHeader.h"
+//#import "MJRefreshGifHeader.h"
 
 #import "MJRefreshBackNormalFooter.h"
 #import "MJRefreshBackGifFooter.h"
