@@ -8,5 +8,5 @@
 
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
-#import "MJTempViewController.h"
+//#import "MJTempViewController.h"
 #endif /* PrefixHeader_pch */

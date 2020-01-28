@@ -8,10 +8,10 @@
 
 import MJRefresh
 
-@objc class MJChiBaoZiHeader: MJRefreshGifHeader
+@objc public class MJChiBaoZiHeader: MJRefreshGifHeader
 {
     
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         // 设置普通状态的动画图片
         var idleImages = [UIImage]()

@@ -5,10 +5,19 @@
 #import "UIScrollView+MJExtension.h"
 #import "UIView+MJExtension.h"
 
-#import "MJRefreshNormalHeader.h"
 //#import "MJRefreshGifHeader.h"
 
 #import "MJRefreshBackNormalFooter.h"
 #import "MJRefreshBackGifFooter.h"
 #import "MJRefreshAutoNormalFooter.h"
 #import "MJRefreshAutoGifFooter.h"
+
+#import <Foundation/Foundation.h>
+//! Project version number for CCBaseKit.
+FOUNDATION_EXPORT double MJRefreshVersionNumber;
+
+//! Project version string for CCBaseKit.
+FOUNDATION_EXPORT const unsigned char MJRefreshVersionString[];
+#import "MJRefreshHeader.h"
+#import "MJRefreshConfig.h"
+#import "MJRefreshComponent.h"

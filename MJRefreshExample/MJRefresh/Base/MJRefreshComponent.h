@@ -105,5 +105,6 @@ typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)(void);
 
 @interface UILabel(MJRefresh)
 + (instancetype)mj_label;
+//var get
 - (CGFloat)mj_textWidth;
 @end

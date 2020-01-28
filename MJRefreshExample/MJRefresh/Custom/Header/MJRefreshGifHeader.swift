@@ -11,7 +11,7 @@ import UIKit
 //MARK: - GifHeader
 open class MJRefreshGifHeader: MJRefreshStateHeader
 {
-    private(set) lazy var gifView: UIImageView = {
+    open lazy var gifView: UIImageView = {
         let _gifView = UIImageView()
         addSubview(_gifView)
         return _gifView
@@ -26,11 +26,11 @@ open class MJRefreshGifHeader: MJRefreshStateHeader
 //MARK: - 公共方法
 extension MJRefreshGifHeader : MJRefreshProtocol_Gif
 {
-    public func setImages(images: [UIImage], for state: MJRefreshState) {
+    open func setImages(images: [UIImage], for state: MJRefreshState) {
         setImages(images: images, duration: Double(images.count) * 0.1, for: state)
     }
     
-    public func setImages(images: [UIImage], duration: TimeInterval, for state: MJRefreshState) {
+    open func setImages(images: [UIImage], duration: TimeInterval, for state: MJRefreshState) {
         stateImages[state] = images
         stateDurations[state] = duration
         
@@ -50,12 +50,11 @@ extension MJRefreshGifHeader
     open override func prepare() {
         super.prepare()
         // 初始化间距
-        self.labelLeftInset = 20;
+        self.labelLeftInset = 20
     }
     
     open override var pullingPercent: CGFloat{
-        set {
-            super.pullingPercent = newValue
+        didSet {
             if self.state != MJRefreshState.idle { return }
             guard let images = self.stateImages[MJRefreshState.idle], images.count > 0 else {
                 return
@@ -69,68 +68,55 @@ extension MJRefreshGifHeader
             if index >= CGFloat(images.count) { index = CGFloat(images.count) - 1 }
             self.gifView.image = images[Int(index)]
         }
-        get {
-            return super.pullingPercent
-        }
     }
     open override func placeSubviews() {
         super.placeSubviews()
-        //    if (self.gifView.constraints.count) return;
-        //
-        //    self.gifView.frame = self.bounds;
-        //    if (self.stateLabel.hidden && self.lastUpdatedTimeLabel.hidden) {
-        //        self.gifView.contentMode = UIViewContentModeCenter;
-        //    } else {
-        //        self.gifView.contentMode = UIViewContentModeRight;
-        //
-        //        CGFloat stateWidth = self.stateLabel.mj_textWidth;
-        //        CGFloat timeWidth = 0.0;
-        //        if (!self.lastUpdatedTimeLabel.hidden) {
-        //            timeWidth = self.lastUpdatedTimeLabel.mj_textWidth;
-        //        }
-        //        CGFloat textWidth = MAX(stateWidth, timeWidth);
-        //        self.gifView.mj_w = self.mj_w * 0.5 - textWidth * 0.5 - self.labelLeftInset;
-        //    }
+        if (self.gifView.constraints.count != 0){ return }
+        
+        self.gifView.frame = self.bounds
+        
+        if (self.stateLabel.isHidden && self.lastUpdatedTimeLabel.isHidden)
+        {
+            self.gifView.contentMode = .center
+        } else {
+            self.gifView.contentMode = .right
+            
+            let stateWidth = self.stateLabel.mj_textWidth()
+            var timeWidth:CGFloat = 0.0
+            if (!self.lastUpdatedTimeLabel.isHidden) {
+                timeWidth = self.lastUpdatedTimeLabel.mj_textWidth()
+            }
+            let textWidth = max(stateWidth, timeWidth)
+            self.gifView.mj_w = self.mj_w * 0.5 - textWidth * 0.5 - self.labelLeftInset
+        }
     }
     open override var state: MJRefreshState {
         set {
-            //    MJRefreshCheckState
-            //
-            //    // 根据状态做事情
-            //    if (state == MJRefreshStatePulling || state == MJRefreshStateRefreshing) {
-            //        NSArray *images = self.stateImages[@(state)];
-            //        if (images.count == 0) return;
-            //
-            //        [self.gifView stopAnimating];
-            //        if (images.count == 1) { // 单张图片
-            //            self.gifView.image = [images lastObject];
-            //        } else { // 多张图片
-            //            self.gifView.animationImages = images;
-            //            self.gifView.animationDuration = [self.stateDurations[@(state)] doubleValue];
-            //            [self.gifView startAnimating];
-            //        }
-            //    } else if (state == MJRefreshStateIdle) {
-            //        [self.gifView stopAnimating];
-            //    }
+            let oldState = self.state
+            if (newValue == oldState) { return }
+            super.state = newValue
+            
+            // 根据状态做事情
+            if (state == .pulling || state == .refreshing)
+            {
+                guard let images = self.stateImages[state], images.count != 0 else {
+                    return
+                }
+                
+                self.gifView.stopAnimating()
+                if (images.count == 1) { // 单张图片
+                    self.gifView.image = images.last
+                } else { // 多张图片
+                    self.gifView.animationImages = images
+                    self.gifView.animationDuration = self.stateDurations[state] ?? 0
+                    self.gifView.startAnimating()
+                }
+            } else if (state == .idle) {
+                self.gifView.stopAnimating()
+            }
         }
         get {
             return super.state
         }
     }
 }
-
-//做储备：返回对象
-//func someMethod<T: SomeType where T: SomeProtocol>(condition: Bool) -> T {
-//  var someVar : T
-//  if (condition) {
-//    someVar = SomeOtherType() as T
-//  }
-//  else {
-//    someVar = SomeOtherOtherType() as T
-//  }
-//
-//  someVar.someMethodInSomeProtocol()
-//  return someVar as T
-//}
-//public static func deserialize(from dict: [String : Any]?, designatedPath: String? = nil) -> Self?
-

@@ -29,3 +29,9 @@ public protocol MJRefreshProtocol_Gif
 
 
 
+public protocol MJRefreshProtocol_SubViews
+{
+    func prepare()
+    func placeSubviews()
+    var state: MJRefreshState { get set }
+}
