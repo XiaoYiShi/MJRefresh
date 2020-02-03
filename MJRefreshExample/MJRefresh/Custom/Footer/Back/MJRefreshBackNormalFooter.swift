@@ -1,14 +1,14 @@
 //
-//  MJRefreshNormalHeader.swift
-//  MJRefreshExample
+//  MJRefreshBackNormalFooter.swift
+//  MJRefreshFramework
 //
-//  Created by 史晓义 on 2020/1/24.
+//  Created by 史晓义 on 2020/1/28.
 //  Copyright © 2020 小码哥. All rights reserved.
 //
 
 import UIKit
 
-open class MJRefreshNormalHeader: MJRefreshStateHeader
+open class MJRefreshBackNormalFooter: MJRefreshBackStateFooter
 {
     //MARK: - 懒加载子控件
     public lazy var arrowView: UIImageView = {
@@ -16,35 +16,34 @@ open class MJRefreshNormalHeader: MJRefreshStateHeader
         addSubview(arrowView)
         return arrowView
     }()
-    public lazy var loadingView: UIActivityIndicatorView = {
+    
+    private lazy var loadingView: UIActivityIndicatorView = {
         let loadingView = UIActivityIndicatorView.init(style: .gray)
         loadingView.hidesWhenStopped = true
         addSubview(loadingView)
         return loadingView
     }()
+    
 }
-extension MJRefreshNormalHeader : MJRefreshProtocol_SubViews
+
+
+extension MJRefreshBackNormalFooter
 {
     //MARK: - 重写父类的方法
     open override func prepare() {
         super.prepare()
-        loadingView.style = .gray
+        self.loadingView.style = .gray
     }
+    
     open override func placeSubviews() {
         super.placeSubviews()
         // 箭头的中心点
         var arrowCenterX = self.mj_w * 0.5
         if (!self.stateLabel.isHidden) {
-            let stateWidth = self.stateLabel.mj_textWidth()
-            var timeWidth:CGFloat = 0.0
-            if (!self.lastUpdatedTimeLabel.isHidden) {
-                timeWidth = self.lastUpdatedTimeLabel.mj_textWidth()
-            }
-            let textWidth = max(stateWidth, timeWidth);
-            arrowCenterX -= textWidth / 2 + self.labelLeftInset
+            arrowCenterX -= self.labelLeftInset + self.stateLabel.mj_textWidth() * 0.5
         }
         let arrowCenterY = self.mj_h * 0.5
-        let arrowCenter = CGPoint(x: arrowCenterX, y: arrowCenterY)
+        let arrowCenter = CGPoint.init(x: arrowCenterX, y: arrowCenterY)
         
         // 箭头
         if (self.arrowView.constraints.count == 0) {
@@ -59,9 +58,10 @@ extension MJRefreshNormalHeader : MJRefreshProtocol_SubViews
         
         self.arrowView.tintColor = self.stateLabel.textColor
     }
+    
     open override var state: MJRefreshState {
         get {
-            super.state
+            return super.state
         }
         set {
             let oldState = self.state
@@ -71,40 +71,41 @@ extension MJRefreshNormalHeader : MJRefreshProtocol_SubViews
             // 根据状态做事情
             if (state == .idle) {
                 if (oldState == .refreshing) {
-                    self.arrowView.transform = .identity
+                    self.arrowView.transform = CGAffineTransform(rotationAngle: 0.000001 - .pi)
+                    
                     UIView.animate(withDuration: TimeInterval(MJRefreshSlowAnimationDuration), animations: {
                         self.loadingView.alpha = 0.0
                     }) { (finished) in
-                        // 如果执行完动画发现不是idle状态，就直接返回，进入其他状态
-                        if (self.state != .idle) { return }
+                        // 防止动画结束后，状态已经不是MJRefreshStateIdle
+                        if (self.state != .idle) {return}
                         
                         self.loadingView.alpha = 1.0
-                        
                         self.loadingView.stopAnimating()
+                        
                         self.arrowView.isHidden = false
                     }
                 } else {
-                    self.loadingView.stopAnimating()
                     self.arrowView.isHidden = false
-                    UIView.animate(
-                        withDuration: TimeInterval(MJRefreshFastAnimationDuration)
-                    ) {
-                        self.arrowView.transform = .identity
+                    self.loadingView.stopAnimating()
+                    UIView.animate(withDuration: TimeInterval(MJRefreshFastAnimationDuration)) {
+                        self.arrowView.transform = CGAffineTransform(rotationAngle: 0.000001 - .pi)
                     }
                 }
             } else if (state == .pulling) {
-                self.loadingView.stopAnimating()
                 self.arrowView.isHidden = false
-                UIView.animate(
-                    withDuration: TimeInterval(MJRefreshFastAnimationDuration)
-                ) {
-                    self.arrowView.transform = CGAffineTransform.init(rotationAngle: CGFloat(0.000001 - .pi))
+                self.loadingView.stopAnimating()
+                UIView.animate(withDuration: TimeInterval(MJRefreshFastAnimationDuration)) {
+                    self.arrowView.transform = .identity
                 }
             } else if (state == .refreshing) {
-                self.loadingView.alpha = 1.0; // 防止refreshing -> idle的动画完毕动作没有被执行
-                self.loadingView.startAnimating()
                 self.arrowView.isHidden = true
+                self.loadingView.startAnimating()
+            } else if (state == .noMoreData) {
+                self.arrowView.isHidden = true
+                self.loadingView.stopAnimating()
             }
         }
     }
+    
 }
+

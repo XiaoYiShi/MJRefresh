@@ -26,7 +26,12 @@ public protocol MJRefreshProtocol_Gif
     func setImages(images:[UIImage],duration:TimeInterval,for state:MJRefreshState)
     func setImages(images:[UIImage],for state:MJRefreshState)
 }
-
+extension MJRefreshProtocol_Gif
+{
+    public func setImages(images: [UIImage], for state: MJRefreshState) {
+        setImages(images: images, duration: Double(images.count) * 0.1, for: state)
+    }
+}
 
 
 public protocol MJRefreshProtocol_SubViews

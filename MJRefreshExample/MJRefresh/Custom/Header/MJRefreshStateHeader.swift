@@ -11,21 +11,21 @@ import UIKit
 open class MJRefreshStateHeader: MJRefreshHeader
 {
     //MARK: - 刷新时间相关
-    /** 利用这个block来决定显示的更新时间文字 */
-    open var lastUpdatedTimeText : ((_ lastUpdatedTime:Date?)->String)?
+    /// 利用这个block来决定显示的更新时间文字
+    public var lastUpdatedTimeText : ((_ lastUpdatedTime:Date?)->String)?
     
-    /** 显示上一次刷新时间的label */
-    @objc open lazy var lastUpdatedTimeLabel: UILabel = {
+    /// 显示上一次刷新时间的label
+    @objc public lazy var lastUpdatedTimeLabel: UILabel = {
         let _lastUpdatedTimeLabel = UILabel.mj_()!
         addSubview(_lastUpdatedTimeLabel)
         return _lastUpdatedTimeLabel
     }()
     
     //MARK: - 状态相关
-    /** 文字距离圈圈、箭头的距离 */
-    var labelLeftInset = CGFloat(0)
-    /** 显示刷新状态的label */
-    @objc open lazy var stateLabel: UILabel = {
+    /// 文字距离圈圈、箭头的距离
+    public var labelLeftInset = CGFloat(0)
+    /// 显示刷新状态的label
+    @objc public lazy var stateLabel: UILabel = {
         let _stateLabel = UILabel.mj_()!
         addSubview(_stateLabel)
         return _stateLabel
@@ -33,7 +33,7 @@ open class MJRefreshStateHeader: MJRefreshHeader
     
     //MARK: - 公共方法
     
-    /** 设置state状态下的文字 */
+    /// 设置state状态下的文字
     @objc(setTitle:forState:)
     public func setTitle(_ title:String,for state:MJRefreshState)
     {
@@ -42,7 +42,7 @@ open class MJRefreshStateHeader: MJRefreshHeader
         self.stateLabel.text = self.stateTitles[self.state]
     }
     
-    /** 所有状态对应的文字 */
+    /// 所有状态对应的文字
     private var stateTitles = [MJRefreshState:String]()
 }
 

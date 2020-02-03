@@ -14,9 +14,6 @@
 #import "MJRefresh.h"
 
 // 自定义的header
-//#import "MJChiBaoZiHeader.h"
-#import "MJChiBaoZiFooter.h"
-#import "MJChiBaoZiFooter2.h"
 #import "MJDIYHeader.h"
 #import "MJDIYAutoFooter.h"
 #import "MJDIYBackFooter.h"
@@ -168,7 +165,7 @@ static const CGFloat MJDuration = 2.0;
     //    footer.triggerAutomaticallyRefreshPercent = 0.5;
     
     // 隐藏刷新状态的文字
-    footer.refreshingTitleHidden = YES;
+    footer.isRefreshingTitleHidden = YES;
     
     // 设置footer
     self.tableView.mj_footer = footer;
