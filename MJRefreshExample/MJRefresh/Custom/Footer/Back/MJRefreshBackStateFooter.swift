@@ -15,17 +15,17 @@ open class MJRefreshBackStateFooter: MJRefreshBackFooter
     
     /// 显示刷新状态的label
     public lazy var stateLabel: UILabel = {
-        let stateLabel = UILabel.mj_()!
+        let stateLabel = UILabel.mj_label()
         addSubview(stateLabel)
         return stateLabel
     }()
     
     /// 所有状态对应的文字
     private var stateTitles = [MJRefreshState:String]()
-}
-//MARK: - 公共方法
-extension MJRefreshBackStateFooter
-{
+//}
+////MARK: - 公共方法
+//extension MJRefreshBackStateFooter
+//{
     /// 设置state状态下的文字
     @objc(setTitle:forState:)
     public func set(title:String,for state:MJRefreshState) {
@@ -39,10 +39,10 @@ extension MJRefreshBackStateFooter
     public func title(for state:MJRefreshState) -> String {
         return self.stateTitles[state] ?? ""
     }
-}
-//MARK: - 重写父类的方法
-extension MJRefreshBackStateFooter
-{
+//}
+////MARK: - 重写父类的方法
+//extension MJRefreshBackStateFooter
+//{
     open override func prepare() {
         super.prepare()
         

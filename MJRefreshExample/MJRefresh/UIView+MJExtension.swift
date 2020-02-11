@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIView
 {
-    var mj_x: CGFloat {
+    @objc var mj_x: CGFloat {
         get {
             return self.frame.origin.x
         }
@@ -20,7 +20,7 @@ public extension UIView
             self.frame = frame
         }
     }
-    var mj_y: CGFloat {
+    @objc var mj_y: CGFloat {
         get {
             return self.frame.origin.y
         }
@@ -30,7 +30,7 @@ public extension UIView
             self.frame = frame
         }
     }
-    var mj_w: CGFloat {
+    @objc var mj_w: CGFloat {
         get {
             return self.frame.size.width
         }
@@ -40,7 +40,7 @@ public extension UIView
             self.frame = frame
         }
     }
-    var mj_h: CGFloat {
+    @objc var mj_h: CGFloat {
         get {
             return self.frame.size.height
         }
@@ -50,7 +50,7 @@ public extension UIView
             self.frame = frame
         }
     }
-    var mj_size: CGSize {
+    @objc var mj_size: CGSize {
         get {
             return self.frame.size
         }
@@ -60,7 +60,7 @@ public extension UIView
             self.frame = frame
         }
     }
-    var mj_origin: CGPoint {
+    @objc var mj_origin: CGPoint {
         get {
             return self.frame.origin
         }

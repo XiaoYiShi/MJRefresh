@@ -21,27 +21,11 @@ open class MJRefreshGifHeader: MJRefreshStateHeader
     private var stateImages = [MJRefreshState:[UIImage]]()
     /// 所有状态对应的动画时间
     private var stateDurations = [MJRefreshState:TimeInterval]()
-}
-
-//MARK: - 公共方法
-extension MJRefreshGifHeader : MJRefreshProtocol_Gif
-{
-    public func setImages(images: [UIImage], duration: TimeInterval, for state: MJRefreshState) {
-        stateImages[state] = images
-        stateDurations[state] = duration
-        
-        // 根据图片设置控件的高度
-        if let image = images.first,
-            image.size.height > self.mj_h
-        {
-            self.mj_h = image.size.height
-        }
-    }
-}
-
-//MARK: - 实现父类的方法
-extension MJRefreshGifHeader
-{
+//}
+//
+////MARK: - 实现父类的方法
+//extension MJRefreshGifHeader
+//{
     
     open override func prepare() {
         super.prepare()
@@ -77,10 +61,10 @@ extension MJRefreshGifHeader
         } else {
             self.gifView.contentMode = .right
             
-            let stateWidth = self.stateLabel.mj_textWidth()
+            let stateWidth = self.stateLabel.mj_textWidth
             var timeWidth:CGFloat = 0.0
             if (!self.lastUpdatedTimeLabel.isHidden) {
-                timeWidth = self.lastUpdatedTimeLabel.mj_textWidth()
+                timeWidth = self.lastUpdatedTimeLabel.mj_textWidth
             }
             let textWidth = max(stateWidth, timeWidth)
             self.gifView.mj_w = self.mj_w * 0.5 - textWidth * 0.5 - self.labelLeftInset
@@ -113,6 +97,22 @@ extension MJRefreshGifHeader
         }
         get {
             return super.state
+        }
+    }
+}
+
+//MARK: - 公共方法
+extension MJRefreshGifHeader : MJRefreshProtocol_Gif
+{
+    public func setImages(images: [UIImage], duration: TimeInterval, for state: MJRefreshState) {
+        stateImages[state] = images
+        stateDurations[state] = duration
+        
+        // 根据图片设置控件的高度
+        if let image = images.first,
+            image.size.height > self.mj_h
+        {
+            self.mj_h = image.size.height
         }
     }
 }

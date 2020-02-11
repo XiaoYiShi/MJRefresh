@@ -12,7 +12,7 @@ open class MJRefreshBackNormalFooter: MJRefreshBackStateFooter
 {
     //MARK: - 懒加载子控件
     public lazy var arrowView: UIImageView = {
-        let arrowView = UIImageView.init(image: Bundle.mj_arrowImage())
+        let arrowView = UIImageView.init(image: Bundle.mj_arrowImage)
         addSubview(arrowView)
         return arrowView
     }()
@@ -24,11 +24,11 @@ open class MJRefreshBackNormalFooter: MJRefreshBackStateFooter
         return loadingView
     }()
     
-}
-
-
-extension MJRefreshBackNormalFooter
-{
+//}
+//
+//
+//extension MJRefreshBackNormalFooter
+//{
     //MARK: - 重写父类的方法
     open override func prepare() {
         super.prepare()
@@ -40,7 +40,7 @@ extension MJRefreshBackNormalFooter
         // 箭头的中心点
         var arrowCenterX = self.mj_w * 0.5
         if (!self.stateLabel.isHidden) {
-            arrowCenterX -= self.labelLeftInset + self.stateLabel.mj_textWidth() * 0.5
+            arrowCenterX -= self.labelLeftInset + self.stateLabel.mj_textWidth * 0.5
         }
         let arrowCenterY = self.mj_h * 0.5
         let arrowCenter = CGPoint.init(x: arrowCenterX, y: arrowCenterY)

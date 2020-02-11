@@ -12,7 +12,7 @@ open class MJRefreshNormalHeader: MJRefreshStateHeader
 {
     //MARK: - 懒加载子控件
     public lazy var arrowView: UIImageView = {
-        let arrowView = UIImageView.init(image: Bundle.mj_arrowImage())
+        let arrowView = UIImageView.init(image: Bundle.mj_arrowImage)
         addSubview(arrowView)
         return arrowView
     }()
@@ -22,9 +22,9 @@ open class MJRefreshNormalHeader: MJRefreshStateHeader
         addSubview(loadingView)
         return loadingView
     }()
-}
-extension MJRefreshNormalHeader : MJRefreshProtocol_SubViews
-{
+//}
+//extension MJRefreshNormalHeader : MJRefreshProtocol_SubViews
+//{
     //MARK: - 重写父类的方法
     open override func prepare() {
         super.prepare()
@@ -35,10 +35,10 @@ extension MJRefreshNormalHeader : MJRefreshProtocol_SubViews
         // 箭头的中心点
         var arrowCenterX = self.mj_w * 0.5
         if (!self.stateLabel.isHidden) {
-            let stateWidth = self.stateLabel.mj_textWidth()
+            let stateWidth = self.stateLabel.mj_textWidth
             var timeWidth:CGFloat = 0.0
             if (!self.lastUpdatedTimeLabel.isHidden) {
-                timeWidth = self.lastUpdatedTimeLabel.mj_textWidth()
+                timeWidth = self.lastUpdatedTimeLabel.mj_textWidth
             }
             let textWidth = max(stateWidth, timeWidth);
             arrowCenterX -= textWidth / 2 + self.labelLeftInset

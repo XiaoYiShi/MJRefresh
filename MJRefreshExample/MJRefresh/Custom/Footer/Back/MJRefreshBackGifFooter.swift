@@ -20,28 +20,11 @@ open class MJRefreshBackGifFooter: MJRefreshBackStateFooter
     private var stateImages = [MJRefreshState:[UIImage]]()
     /// 所有状态对应的动画时间
     private var stateDurations = [MJRefreshState:TimeInterval]()
-}
-
-/// 设置state状态下的动画图片images 动画持续时间duration
-extension MJRefreshBackGifFooter : MJRefreshProtocol_Gif
-{
-    public func setImages(images: [UIImage], duration: TimeInterval, for state: MJRefreshState) {
-        
-        self.stateImages[state] = images
-        self.stateDurations[state] = duration
-        
-        /// 根据图片设置控件的高度 
-        if let image = images.first,
-            image.size.height > self.mj_h
-        {
-            self.mj_h = image.size.height
-        }
-    }
-    
-}
-
-extension MJRefreshBackGifFooter
-{
+//}
+//
+//
+//extension MJRefreshBackGifFooter
+//{
     
     //MARK: - 实现父类的方法
     open override func prepare() {
@@ -70,7 +53,7 @@ extension MJRefreshBackGifFooter
             self.gifView.contentMode = .center
         } else {
             self.gifView.contentMode = .right
-            self.gifView.mj_w = self.mj_w * 0.5 - self.labelLeftInset - self.stateLabel.mj_textWidth() * 0.5
+            self.gifView.mj_w = self.mj_w * 0.5 - self.labelLeftInset - self.stateLabel.mj_textWidth * 0.5
         }
     }
     open override var state: MJRefreshState {
@@ -108,3 +91,20 @@ extension MJRefreshBackGifFooter
     }
 }
 
+/// 设置state状态下的动画图片images 动画持续时间duration
+extension MJRefreshBackGifFooter : MJRefreshProtocol_Gif
+{
+    public func setImages(images: [UIImage], duration: TimeInterval, for state: MJRefreshState) {
+        
+        self.stateImages[state] = images
+        self.stateDurations[state] = duration
+        
+        /// 根据图片设置控件的高度
+        if let image = images.first,
+            image.size.height > self.mj_h
+        {
+            self.mj_h = image.size.height
+        }
+    }
+    
+}

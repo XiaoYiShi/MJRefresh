@@ -16,7 +16,7 @@ open class MJRefreshStateHeader: MJRefreshHeader
     
     /// 显示上一次刷新时间的label
     @objc public lazy var lastUpdatedTimeLabel: UILabel = {
-        let _lastUpdatedTimeLabel = UILabel.mj_()!
+        let _lastUpdatedTimeLabel = UILabel.mj_label()
         addSubview(_lastUpdatedTimeLabel)
         return _lastUpdatedTimeLabel
     }()
@@ -26,7 +26,7 @@ open class MJRefreshStateHeader: MJRefreshHeader
     public var labelLeftInset = CGFloat(0)
     /// 显示刷新状态的label
     @objc public lazy var stateLabel: UILabel = {
-        let _stateLabel = UILabel.mj_()!
+        let _stateLabel = UILabel.mj_label()
         addSubview(_stateLabel)
         return _stateLabel
     }()
@@ -44,14 +44,9 @@ open class MJRefreshStateHeader: MJRefreshHeader
     
     /// 所有状态对应的文字
     private var stateTitles = [MJRefreshState:String]()
-}
-
-
-extension MJRefreshStateHeader
-{
     
     //MARK: - key的处理
-    open override var lastUpdatedTimeKey: String! {
+    public override var lastUpdatedTimeKey: String {
         didSet {
             
             // 如果label隐藏了，就不用再处理
@@ -103,10 +98,10 @@ extension MJRefreshStateHeader
             }
         }
     }
-}
-
-extension MJRefreshStateHeader
-{
+//}
+//
+//extension MJRefreshStateHeader
+//{
     //MARK: - 覆盖父类的方法
     open override func prepare() {
         super.prepare()

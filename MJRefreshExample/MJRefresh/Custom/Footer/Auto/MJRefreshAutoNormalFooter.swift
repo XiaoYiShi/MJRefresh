@@ -27,11 +27,11 @@ open class MJRefreshAutoNormalFooter: MJRefreshAutoStateFooter
         addSubview(loadingView)
         return loadingView
     }()
-}
-
-//MARK: - 重写父类的方法
-extension MJRefreshAutoNormalFooter
-{
+//}
+//
+////MARK: - 重写父类的方法
+//extension MJRefreshAutoNormalFooter
+//{
     override open func prepare() {
         super.prepare()
         self.activityIndicatorViewStyle = .gray
@@ -44,7 +44,7 @@ extension MJRefreshAutoNormalFooter
         // 圈圈
         var loadingCenterX = self.mj_w * 0.5
         if (!self.isRefreshingTitleHidden) {
-            loadingCenterX -= self.stateLabel.mj_textWidth() * 0.5 + self.labelLeftInset
+            loadingCenterX -= self.stateLabel.mj_textWidth * 0.5 + self.labelLeftInset
         }
         let loadingCenterY = self.mj_h * 0.5
         self.loadingView.center = CGPoint(x: loadingCenterX, y: loadingCenterY)

@@ -7,6 +7,7 @@
 //
 
 import MJRefresh
+import UIKit
 
 @objc public class MJChiBaoZiFooter: MJRefreshAutoGifFooter
 {

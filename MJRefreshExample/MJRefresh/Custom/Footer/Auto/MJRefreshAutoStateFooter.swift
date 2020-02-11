@@ -15,7 +15,7 @@ open class MJRefreshAutoStateFooter: MJRefreshAutoFooter
     
     /// 显示刷新状态的label
     @objc public lazy var stateLabel: UILabel = {
-        let stateLabel = UILabel.mj_()!
+        let stateLabel = UILabel.mj_label()
         addSubview(stateLabel)
         return stateLabel
     }()
@@ -25,10 +25,10 @@ open class MJRefreshAutoStateFooter: MJRefreshAutoFooter
     
     /// 所有状态对应的文字
     private var stateTitles = [MJRefreshState:String]()
-}
-
-extension MJRefreshAutoStateFooter
-{
+//}
+//
+//extension MJRefreshAutoStateFooter
+//{
     //MARK: - 公共方法
     /// 设置state状态下的文字
     @objc(setTitle:forState:)
@@ -44,13 +44,10 @@ extension MJRefreshAutoStateFooter
             self.beginRefreshing()
         }
     }
-    open override func beginRefreshing() {
-        super.beginRefreshing()
-    }
-}
-//MARK: - 重写父类的方法
-extension MJRefreshAutoStateFooter
-{
+//}
+////MARK: - 重写父类的方法
+//extension MJRefreshAutoStateFooter
+//{
     override open func prepare() {
         super.prepare()
         // 初始化间距
