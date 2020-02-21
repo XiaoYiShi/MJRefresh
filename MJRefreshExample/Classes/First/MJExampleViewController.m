@@ -9,11 +9,13 @@
 
 #import "MJExampleViewController.h"
 #import "MJTableViewController.h"
-#import "MJWebViewViewController.h"
 #import "MJCollectionViewController.h"
 #import "MJExample.h"
 #import "UIViewController+Example.h"
 #import "MJRefresh.h"
+
+// 自定义的header
+#import "MJRefreshExample-Swift.h"
 
 static NSString *const MJExample00 = @"UITableView + 下拉刷新";
 static NSString *const MJExample10 = @"UITableView + 上拉刷新";
@@ -51,7 +53,7 @@ static NSString *const MJExample30 = @"UIWebView";
         exam3.header = MJExample30;
         exam3.vcClass = [MJWebViewViewController class];
         exam3.titles = @[@"下拉刷新"];
-        exam3.methods = @[@"example31"];
+        exam3.methods = @[];
         
         self.examples = @[exam0, exam1, exam2, exam3];
     }
@@ -104,8 +106,11 @@ static NSString *const MJExample30 = @"UIWebView";
     
     MJExample *exam = self.examples[indexPath.section];
     cell.textLabel.text = exam.titles[indexPath.row];
-    
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", exam.vcClass, exam.methods[indexPath.row]];
+    if (indexPath.section<3) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", exam.vcClass, exam.methods[indexPath.row]];
+    } else {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", exam.vcClass];
+    }
     
     return cell;
 }
@@ -121,7 +126,11 @@ static NSString *const MJExample30 = @"UIWebView";
     MJExample *exam = self.examples[indexPath.section];
     UIViewController *vc = [[exam.vcClass alloc] init];
     vc.title = exam.titles[indexPath.row];
-    [vc setValue:exam.methods[indexPath.row] forKeyPath:@"method"];
+    if (indexPath.section<3) {
+        [vc setValue:exam.methods[indexPath.row] forKeyPath:@"method"];
+    } else {
+//        [vc setValue:exam.methods[indexPath.row] forKeyPath:@"method"];
+    }
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -27,8 +27,6 @@
 		2D9BEB181BB15F4A00AED473 /* MJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEB021BB15F4A00AED473 /* MJTableViewController.m */; };
 		2D9BEB191BB15F4A00AED473 /* MJTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEB041BB15F4A00AED473 /* MJTestViewController.m */; };
 		2D9BEB1A1BB15F4A00AED473 /* MJTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9BEB051BB15F4A00AED473 /* MJTestViewController.xib */; };
-		2D9BEB1B1BB15F4A00AED473 /* MJWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEB071BB15F4A00AED473 /* MJWebViewViewController.m */; };
-		2D9BEB1C1BB15F4A00AED473 /* MJWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9BEB081BB15F4A00AED473 /* MJWebViewViewController.xib */; };
 		2DA7F92B1AA6B4C4005627AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7F92A1AA6B4C4005627AB /* main.m */; };
 		2DA7F9341AA6B4C4005627AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7F9321AA6B4C4005627AB /* Main.storyboard */; };
 		2DA7F9361AA6B4C4005627AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7F9351AA6B4C4005627AB /* Images.xcassets */; };
@@ -72,6 +70,7 @@
 		5654CED423EBDE9B00250CED /* MJRefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5654CED323EBDE9B00250CED /* MJRefreshComponent.swift */; };
 		5697337723EC7EAE00C84B5F /* NSBundle+MJRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5697337623EC7EAE00C84B5F /* NSBundle+MJRefresh.swift */; };
 		5697337823EC8A6C00C84B5F /* NSBundle+MJRefresh.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5697337623EC7EAE00C84B5F /* NSBundle+MJRefresh.swift */; };
+		56A2337C23FE5B65000DCA50 /* MJWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2337B23FE5B65000DCA50 /* MJWebViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,9 +133,6 @@
 		2D9BEB031BB15F4A00AED473 /* MJTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTestViewController.h; sourceTree = "<group>"; };
 		2D9BEB041BB15F4A00AED473 /* MJTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTestViewController.m; sourceTree = "<group>"; };
 		2D9BEB051BB15F4A00AED473 /* MJTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJTestViewController.xib; sourceTree = "<group>"; };
-		2D9BEB061BB15F4A00AED473 /* MJWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJWebViewViewController.h; sourceTree = "<group>"; };
-		2D9BEB071BB15F4A00AED473 /* MJWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJWebViewViewController.m; sourceTree = "<group>"; };
-		2D9BEB081BB15F4A00AED473 /* MJWebViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJWebViewViewController.xib; sourceTree = "<group>"; };
 		2D9DF4521F7CE29B0042D6DD /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D9DF4551F7CE29B0042D6DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DA7F9251AA6B4C4005627AB /* MJRefreshExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJRefreshExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +167,8 @@
 		5654CED023EBC9D000250CED /* MJRefreshFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJRefreshFooter.swift; sourceTree = "<group>"; };
 		5654CED323EBDE9B00250CED /* MJRefreshComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJRefreshComponent.swift; sourceTree = "<group>"; };
 		5697337623EC7EAE00C84B5F /* NSBundle+MJRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBundle+MJRefresh.swift"; sourceTree = "<group>"; };
+		56A2337B23FE5B65000DCA50 /* MJWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJWebViewViewController.swift; sourceTree = "<group>"; };
+		56A2337D23FF74BE000DCA50 /* bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge_Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +326,7 @@
 			children = (
 				2D9BEAFC1BB15F4A00AED473 /* AppDelegate.h */,
 				2D9BEAFD1BB15F4A00AED473 /* AppDelegate.m */,
+				56A2337D23FF74BE000DCA50 /* bridge_Header.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -342,9 +341,7 @@
 				2D9BEB031BB15F4A00AED473 /* MJTestViewController.h */,
 				2D9BEB041BB15F4A00AED473 /* MJTestViewController.m */,
 				2D9BEB051BB15F4A00AED473 /* MJTestViewController.xib */,
-				2D9BEB061BB15F4A00AED473 /* MJWebViewViewController.h */,
-				2D9BEB071BB15F4A00AED473 /* MJWebViewViewController.m */,
-				2D9BEB081BB15F4A00AED473 /* MJWebViewViewController.xib */,
+				56A2337B23FE5B65000DCA50 /* MJWebViewViewController.swift */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -574,7 +571,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA7F9341AA6B4C4005627AB /* Main.storyboard in Resources */,
-				2D9BEB1C1BB15F4A00AED473 /* MJWebViewViewController.xib in Resources */,
 				2DA7F9391AA6B4C4005627AB /* LaunchScreen.xib in Resources */,
 				2D9BEB1A1BB15F4A00AED473 /* MJTestViewController.xib in Resources */,
 				2DA7F9361AA6B4C4005627AB /* Images.xcassets in Resources */,
@@ -630,8 +626,8 @@
 				5654CEAA23E3DCAA00250CED /* MJChiBaoZiFooter2.swift in Sources */,
 				5654CEC423E9434000250CED /* MJDIYBackFooter.swift in Sources */,
 				2D9BEB141BB15F4A00AED473 /* MJSingleViewController.m in Sources */,
-				2D9BEB1B1BB15F4A00AED473 /* MJWebViewViewController.m in Sources */,
 				2D9BEB101BB15F4A00AED473 /* MJExample.m in Sources */,
+				56A2337C23FE5B65000DCA50 /* MJWebViewViewController.swift in Sources */,
 				000CF8FF23D5AC7F005029D3 /* MJChiBaoZiHeader.swift in Sources */,
 				2DA7F92B1AA6B4C4005627AB /* main.m in Sources */,
 				2D9BEB091BB15F4A00AED473 /* UIViewController+Example.m in Sources */,
@@ -865,7 +861,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mj.MJRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/MJRefreshExample/Classes/Other/bridge_Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -884,7 +880,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mj.MJRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/MJRefreshExample/Classes/Other/bridge_Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

@@ -173,7 +173,7 @@ import UIKit
             }
         } else if (self.state == .pulling) {// 即将刷新 && 手松开
             // 开始刷新
-            beginRefreshing()
+            self.beginRefreshing()
         } else if (pullingPercent < 1) {
             self.pullingPercent = pullingPercent
         }

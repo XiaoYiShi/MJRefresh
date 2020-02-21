@@ -156,7 +156,7 @@ open class MJRefreshAutoFooter: MJRefreshFooter
             if (!lastHidden && newValue) {
                 self.state = .idle
                 
-                self.scrollView.mj_insetB -= self.mj_h
+                self.scrollView?.mj_insetB -= self.mj_h
             } else if (lastHidden && !newValue) {
                 self.scrollView.mj_insetB += self.mj_h
                 
