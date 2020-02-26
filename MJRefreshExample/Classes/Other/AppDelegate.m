@@ -8,7 +8,8 @@
 //
 
 #import "AppDelegate.h"
-#import "MJExampleWindow.h"
+// 自定义的header
+#import "MJRefreshExample-Swift.h"
 
 @interface AppDelegate ()
 @end

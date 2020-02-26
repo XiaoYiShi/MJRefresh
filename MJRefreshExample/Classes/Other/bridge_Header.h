@@ -10,5 +10,8 @@
 #define bridge_Header_h
 
 //#import "UIViewController+Example.h"
+#import "MJTestViewController.h"
+
+
 
 #endif /* bridge_Header_h */

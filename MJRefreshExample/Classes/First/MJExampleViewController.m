@@ -9,7 +9,6 @@
 
 #import "MJExampleViewController.h"
 #import "MJTableViewController.h"
-#import "MJCollectionViewController.h"
 #import "MJExample.h"
 #import "UIViewController+Example.h"
 #import "MJRefresh.h"
@@ -53,7 +52,6 @@ static NSString *const MJExample30 = @"UIWebView";
         exam3.header = MJExample30;
         exam3.vcClass = [MJWebViewViewController class];
         exam3.titles = @[@"下拉刷新"];
-        exam3.methods = @[];
         
         self.examples = @[exam0, exam1, exam2, exam3];
     }
@@ -106,7 +104,7 @@ static NSString *const MJExample30 = @"UIWebView";
     
     MJExample *exam = self.examples[indexPath.section];
     cell.textLabel.text = exam.titles[indexPath.row];
-    if (indexPath.section<3) {
+    if (indexPath.section<2) {
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", exam.vcClass, exam.methods[indexPath.row]];
     } else {
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", exam.vcClass];
@@ -126,7 +124,7 @@ static NSString *const MJExample30 = @"UIWebView";
     MJExample *exam = self.examples[indexPath.section];
     UIViewController *vc = [[exam.vcClass alloc] init];
     vc.title = exam.titles[indexPath.row];
-    if (indexPath.section<3) {
+    if (indexPath.section<2) {
         [vc setValue:exam.methods[indexPath.row] forKeyPath:@"method"];
     } else {
 //        [vc setValue:exam.methods[indexPath.row] forKeyPath:@"method"];

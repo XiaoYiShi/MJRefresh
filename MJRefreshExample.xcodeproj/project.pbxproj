@@ -18,12 +18,8 @@
 		2D9BEB091BB15F4A00AED473 /* UIViewController+Example.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEAE01BB15F4A00AED473 /* UIViewController+Example.m */; };
 		2D9BEB101BB15F4A00AED473 /* MJExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEAF01BB15F4A00AED473 /* MJExample.m */; };
 		2D9BEB111BB15F4A00AED473 /* MJExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEAF21BB15F4A00AED473 /* MJExampleViewController.m */; };
-		2D9BEB121BB15F4A00AED473 /* MJExampleWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEAF41BB15F4A00AED473 /* MJExampleWindow.m */; };
 		2D9BEB131BB15F4A00AED473 /* MJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEAF61BB15F4A00AED473 /* MJNavigationController.m */; };
-		2D9BEB141BB15F4A00AED473 /* MJSingleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEAF81BB15F4A00AED473 /* MJSingleViewController.m */; };
-		2D9BEB151BB15F4A00AED473 /* MJTempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEAFA1BB15F4A00AED473 /* MJTempViewController.m */; };
 		2D9BEB161BB15F4A00AED473 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEAFD1BB15F4A00AED473 /* AppDelegate.m */; };
-		2D9BEB171BB15F4A00AED473 /* MJCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEB001BB15F4A00AED473 /* MJCollectionViewController.m */; };
 		2D9BEB181BB15F4A00AED473 /* MJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEB021BB15F4A00AED473 /* MJTableViewController.m */; };
 		2D9BEB191BB15F4A00AED473 /* MJTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9BEB041BB15F4A00AED473 /* MJTestViewController.m */; };
 		2D9BEB1A1BB15F4A00AED473 /* MJTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9BEB051BB15F4A00AED473 /* MJTestViewController.xib */; };
@@ -71,6 +67,10 @@
 		5697337723EC7EAE00C84B5F /* NSBundle+MJRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5697337623EC7EAE00C84B5F /* NSBundle+MJRefresh.swift */; };
 		5697337823EC8A6C00C84B5F /* NSBundle+MJRefresh.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5697337623EC7EAE00C84B5F /* NSBundle+MJRefresh.swift */; };
 		56A2337C23FE5B65000DCA50 /* MJWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2337B23FE5B65000DCA50 /* MJWebViewViewController.swift */; };
+		56DF12E02402357C007DD4DF /* MJSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF12DF2402357C007DD4DF /* MJSingleViewController.swift */; };
+		56DF12E224023A1F007DD4DF /* MJExampleWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF12E124023A1F007DD4DF /* MJExampleWindow.swift */; };
+		56DF12E424024422007DD4DF /* MJCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF12E324024422007DD4DF /* MJCollectionViewController.swift */; };
+		56DF170324068880007DD4DF /* MJTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF170224068880007DD4DF /* MJTempViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,18 +116,10 @@
 		2D9BEAF01BB15F4A00AED473 /* MJExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExample.m; sourceTree = "<group>"; };
 		2D9BEAF11BB15F4A00AED473 /* MJExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExampleViewController.h; sourceTree = "<group>"; };
 		2D9BEAF21BB15F4A00AED473 /* MJExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExampleViewController.m; sourceTree = "<group>"; };
-		2D9BEAF31BB15F4A00AED473 /* MJExampleWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExampleWindow.h; sourceTree = "<group>"; };
-		2D9BEAF41BB15F4A00AED473 /* MJExampleWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExampleWindow.m; sourceTree = "<group>"; };
 		2D9BEAF51BB15F4A00AED473 /* MJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJNavigationController.h; sourceTree = "<group>"; };
 		2D9BEAF61BB15F4A00AED473 /* MJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJNavigationController.m; sourceTree = "<group>"; };
-		2D9BEAF71BB15F4A00AED473 /* MJSingleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSingleViewController.h; sourceTree = "<group>"; };
-		2D9BEAF81BB15F4A00AED473 /* MJSingleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSingleViewController.m; sourceTree = "<group>"; };
-		2D9BEAF91BB15F4A00AED473 /* MJTempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTempViewController.h; sourceTree = "<group>"; };
-		2D9BEAFA1BB15F4A00AED473 /* MJTempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTempViewController.m; sourceTree = "<group>"; };
 		2D9BEAFC1BB15F4A00AED473 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2D9BEAFD1BB15F4A00AED473 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2D9BEAFF1BB15F4A00AED473 /* MJCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCollectionViewController.h; sourceTree = "<group>"; };
-		2D9BEB001BB15F4A00AED473 /* MJCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCollectionViewController.m; sourceTree = "<group>"; };
 		2D9BEB011BB15F4A00AED473 /* MJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableViewController.h; sourceTree = "<group>"; };
 		2D9BEB021BB15F4A00AED473 /* MJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableViewController.m; sourceTree = "<group>"; };
 		2D9BEB031BB15F4A00AED473 /* MJTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTestViewController.h; sourceTree = "<group>"; };
@@ -169,6 +161,10 @@
 		5697337623EC7EAE00C84B5F /* NSBundle+MJRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBundle+MJRefresh.swift"; sourceTree = "<group>"; };
 		56A2337B23FE5B65000DCA50 /* MJWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJWebViewViewController.swift; sourceTree = "<group>"; };
 		56A2337D23FF74BE000DCA50 /* bridge_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge_Header.h; sourceTree = "<group>"; };
+		56DF12DF2402357C007DD4DF /* MJSingleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJSingleViewController.swift; sourceTree = "<group>"; };
+		56DF12E124023A1F007DD4DF /* MJExampleWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJExampleWindow.swift; sourceTree = "<group>"; };
+		56DF12E324024422007DD4DF /* MJCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJCollectionViewController.swift; sourceTree = "<group>"; };
+		56DF170224068880007DD4DF /* MJTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJTempViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,14 +305,11 @@
 				2D9BEAF01BB15F4A00AED473 /* MJExample.m */,
 				2D9BEAF11BB15F4A00AED473 /* MJExampleViewController.h */,
 				2D9BEAF21BB15F4A00AED473 /* MJExampleViewController.m */,
-				2D9BEAF31BB15F4A00AED473 /* MJExampleWindow.h */,
-				2D9BEAF41BB15F4A00AED473 /* MJExampleWindow.m */,
+				56DF12E124023A1F007DD4DF /* MJExampleWindow.swift */,
 				2D9BEAF51BB15F4A00AED473 /* MJNavigationController.h */,
 				2D9BEAF61BB15F4A00AED473 /* MJNavigationController.m */,
-				2D9BEAF71BB15F4A00AED473 /* MJSingleViewController.h */,
-				2D9BEAF81BB15F4A00AED473 /* MJSingleViewController.m */,
-				2D9BEAF91BB15F4A00AED473 /* MJTempViewController.h */,
-				2D9BEAFA1BB15F4A00AED473 /* MJTempViewController.m */,
+				56DF12DF2402357C007DD4DF /* MJSingleViewController.swift */,
+				56DF170224068880007DD4DF /* MJTempViewController.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -334,8 +327,7 @@
 		2D9BEAFE1BB15F4A00AED473 /* Second */ = {
 			isa = PBXGroup;
 			children = (
-				2D9BEAFF1BB15F4A00AED473 /* MJCollectionViewController.h */,
-				2D9BEB001BB15F4A00AED473 /* MJCollectionViewController.m */,
+				56DF12E324024422007DD4DF /* MJCollectionViewController.swift */,
 				2D9BEB011BB15F4A00AED473 /* MJTableViewController.h */,
 				2D9BEB021BB15F4A00AED473 /* MJTableViewController.m */,
 				2D9BEB031BB15F4A00AED473 /* MJTestViewController.h */,
@@ -619,23 +611,23 @@
 			files = (
 				5654CEBF23E90DFA00250CED /* MJDIYAutoFooter.swift in Sources */,
 				2D9BEB181BB15F4A00AED473 /* MJTableViewController.m in Sources */,
-				2D9BEB121BB15F4A00AED473 /* MJExampleWindow.m in Sources */,
+				56DF12E424024422007DD4DF /* MJCollectionViewController.swift in Sources */,
 				2D9BEB131BB15F4A00AED473 /* MJNavigationController.m in Sources */,
 				5654CEB723E6C54C00250CED /* MJChiBaoZiFooter.swift in Sources */,
 				2D9BEB161BB15F4A00AED473 /* AppDelegate.m in Sources */,
 				5654CEAA23E3DCAA00250CED /* MJChiBaoZiFooter2.swift in Sources */,
 				5654CEC423E9434000250CED /* MJDIYBackFooter.swift in Sources */,
-				2D9BEB141BB15F4A00AED473 /* MJSingleViewController.m in Sources */,
 				2D9BEB101BB15F4A00AED473 /* MJExample.m in Sources */,
 				56A2337C23FE5B65000DCA50 /* MJWebViewViewController.swift in Sources */,
 				000CF8FF23D5AC7F005029D3 /* MJChiBaoZiHeader.swift in Sources */,
+				56DF12E224023A1F007DD4DF /* MJExampleWindow.swift in Sources */,
 				2DA7F92B1AA6B4C4005627AB /* main.m in Sources */,
+				56DF170324068880007DD4DF /* MJTempViewController.swift in Sources */,
 				2D9BEB091BB15F4A00AED473 /* UIViewController+Example.m in Sources */,
 				2D9BEB111BB15F4A00AED473 /* MJExampleViewController.m in Sources */,
 				2D9BEB191BB15F4A00AED473 /* MJTestViewController.m in Sources */,
-				2D9BEB151BB15F4A00AED473 /* MJTempViewController.m in Sources */,
 				5654CECF23EBA9C200250CED /* MJDIYHeader.swift in Sources */,
-				2D9BEB171BB15F4A00AED473 /* MJCollectionViewController.m in Sources */,
+				56DF12E02402357C007DD4DF /* MJSingleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
